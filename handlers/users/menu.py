@@ -45,7 +45,7 @@ def create_request(url):
 
 # Функция проверки существования кошелька
 # В конфигурационном файле должен быть указан путь к API проверки
-def wallet_check(message: Message):
+async def wallet_check(message: Message):
     response = create_request(CHECK_URL)
     if response:
         check_status = json.loads(response.text)
